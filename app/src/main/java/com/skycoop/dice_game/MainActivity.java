@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     private ImageView dice;
@@ -29,7 +31,8 @@ public class MainActivity extends AppCompatActivity {
         dice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                int random_number = new Random().nextInt(number_dice.length);
+                dice.setImageResource(number_dice[random_number]);
             }
         });
     }
